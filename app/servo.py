@@ -14,7 +14,7 @@ GPIO.setup(pinOut2, GPIO.OUT)
 #***tilt : up and down and pan : side by side
 
 tilt = GPIO.PWM(pinOut1, freq)
-pan = GPIO.PWM(pinOut1, freq)
+pan = GPIO.PWM(pinOut2, freq)
 
 tilt.start(2)
 pan.start(2)
