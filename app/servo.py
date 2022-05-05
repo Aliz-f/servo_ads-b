@@ -22,11 +22,20 @@ tilt.start(2)
 
 dutyServo = 2
 
-while dutyServo<=12:
-    tilt.ChangeDutyCycle(dutyServo)
-#    pan.ChangeDutyCycle(dutyServo)
+while True:
+    inpu = int(input("Enter angle: "))
+    if inpu == 0:
+        break
+    angle = (inpu/18) + 2
+    tilt.ChangeDutyCycle(angle)
     sleep(1)
-    dutyServo+=1
+
+
+# while dutyServo<=12:
+#     tilt.ChangeDutyCycle(dutyServo)
+# #    pan.ChangeDutyCycle(dutyServo)
+#     sleep(1)
+#     dutyServo+=1
 
 tilt.ChangeDutyCycle(7)
 sleep(1)
