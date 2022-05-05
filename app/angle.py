@@ -49,3 +49,25 @@ class setAngle:
     #* Function for check pan angle
     def standardPan(slef):
         pass
+
+
+
+class setServoduty: #** format (pan, tilt)
+    #** Get pan & tilt angle and convert to duty for servo motors
+    #** ServoMotor = mg90s || mg90s duty = [2,12] or [2.5,12.5]
+
+    def __init__(self, pan, tilt):
+        self.pan = pan
+        self.tilt = tilt
+        self.angle_to_duty()
+
+
+    def prinInfo(self):
+        print("PanServo Duty:  {}".format(self.pan_servo))
+        print("TiltServo Duty: {}".format(self.tilt_servo))
+
+    
+    def angle_to_duty(self):
+        self.pan_servo = (self.pan/18)+2
+        self.tilt_servo = (self.tilt/18)+2
+
