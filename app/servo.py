@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 pinOut1 = 33
-pinOut2 = 33
+pinOut2 = 32
 freq = 50
 
 
