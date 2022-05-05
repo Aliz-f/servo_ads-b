@@ -2,22 +2,22 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 pinOut1 = 32
-#pinOut2 = 32
+pinOut2 = 33
 freq = 50
 
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(pinOut1, GPIO.OUT)
-#GPIO.setup(pinOut2, GPIO.OUT)
+GPIO.setup(pinOut2, GPIO.OUT)
 
 #***tilt : up and down and pan : side by side
 
 tilt = GPIO.PWM(pinOut1, freq)
-#pan = GPIO.PWM(pinOut2, freq)
+pan = GPIO.PWM(pinOut2, freq)
 
 tilt.start(2)
-#pan.start(2)
+pan.start(2)
 
 
 dutyServo = 2
@@ -29,6 +29,8 @@ while True:
     angle = (inpu/18) + 2
     tilt.ChangeDutyCycle(angle)
     sleep(1)
+    pan.ChangeDutyCycle(angle)
+    sleep(1)
 
 
 # while dutyServo<=12:
@@ -38,9 +40,9 @@ while True:
 #     dutyServo+=1
 
 tilt.ChangeDutyCycle(7)
-sleep(1)
-#pan.ChangeDutyCycle(2)
-
+sleep(0.02)
+pan.ChangeDutyCycle(2)
+sleep(0.02)
 tilt.stop()
 #pan.stop()
 
