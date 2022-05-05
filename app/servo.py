@@ -28,5 +28,10 @@ while dutyServo<12:
     sleep(1)
     dutyServo+=1
 
+tilt.ChangeDutyCycle(2)
+pan.ChangeDutyCycle(2)
+
 tilt.stop()
+pan.stop()
+
 GPIO.cleanup()
