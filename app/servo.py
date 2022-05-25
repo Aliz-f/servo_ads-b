@@ -22,15 +22,15 @@ pan.start(2)
 
 dutyServo = 2
 
-while True:
-    inpu = int(input("Enter angle: "))
-    if inpu == 0:
-        break
-    angle = (inpu/18) + 2
-    tilt.ChangeDutyCycle(angle)
-    sleep(1)
-    pan.ChangeDutyCycle(angle)
-    sleep(1)
+# while True:
+#     inpu = int(input("Enter angle: "))
+#     if inpu == 0:
+#         break
+#     angle = (inpu/18) + 2
+#     tilt.ChangeDutyCycle(angle)
+#     sleep(1)
+#     pan.ChangeDutyCycle(angle)
+#     sleep(1)
 
 
 # while dutyServo<=12:
@@ -39,11 +39,11 @@ while True:
 #     sleep(1)
 #     dutyServo+=1
 
-tilt.ChangeDutyCycle(7)
-sleep(0.02)
-pan.ChangeDutyCycle(2)
-sleep(0.02)
+# tilt.ChangeDutyCycle(7)
+# sleep(0.02)
+# pan.ChangeDutyCycle(2)
+# sleep(0.02)
 tilt.stop()
-#pan.stop()
+pan.stop()
 
 GPIO.cleanup()
