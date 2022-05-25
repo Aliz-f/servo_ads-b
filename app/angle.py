@@ -5,7 +5,7 @@ class setAngle:
     
     #** aircraft and station *** tuple(latitude, longitude, altitude) ***
     #** latitude & longitude convert to radians
-    #** altitude in kilometres    
+    #** altitude in metres    
     
     def __init__(self, aircraft, station, id=None):
         self.aircraft = tuple((radians(aircraft[0]), radians(aircraft[1]), aircraft[2]))
@@ -21,8 +21,8 @@ class setAngle:
         self.deltaLong = self.aircraft[1] - self.station[1]
 
     def printInfo(self):
-        print("Aircraft (Lat: {}, long: {}, altitude: {}) : ".format( self.aircraft[0],self.aircraft[1], self.aircraft[2]))
-        print("Station  (Lat: {}, long: {}, altitude: {})  : ".format(self.station[0],self.station[1], self.station[2]))
+        # print("Aircraft (Lat: {}, long: {}, altitude: {}) : ".format( self.aircraft[0],self.aircraft[1], self.aircraft[2]))
+        # print("Station  (Lat: {}, long: {}, altitude: {})  : ".format(self.station[0],self.station[1], self.station[2]))
         print("Distance : {}".format(self.distance))
         print("pan : {}\u00B0".format( self.pan))
         print("tilt : {}\u00B0".format(self.tilt))

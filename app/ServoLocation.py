@@ -39,12 +39,12 @@ while True:
     print('*************************')
     
     tilt.ChangeDutyCycle(duty.tilt_servo)
-    print(duty.tilt_servo)
-    print(angle.tilt)
+    # print(duty.tilt_servo)
+    # print(angle.tilt)
     sleep(1)
     pan.ChangeDutyCycle(duty.pan_servo)
-    print(duty.pan_servo)
-    print(angle.pan)
+    # print(duty.pan_servo)
+    # print(angle.pan)
     sleep(1)
 
 
