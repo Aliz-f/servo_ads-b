@@ -38,66 +38,71 @@ class MyWindow():
     def __init__(self, win):
         Label(win,text="Station Information",
             fg="white",
-            bg="black").place(x=0, y=0)
+            bg='green',
+            height=2,
+            font=('Fira Code',10)).place(x=0, y=0)
 
         Label(win,text="Station Latitude",
-            fg="black",
+            fg="black",font=('Fira Code', 10)
         ).place(x=0, y=65)
         self.stationLat=Entry(win,
             fg="black",
             bg="white",
             bd=6)
-        self.stationLat.place(x=150, y=60)
+        self.stationLat.place(x=250, y=60)
 
         Label(win,text="Station Longtitude",
-            fg="black",
+            fg="black",font=('Fira Code', 10)
         ).place(x=0, y=125)
         self.stationLong=Entry(win,
             fg="black",
             bg="white",
             bd=6)
-        self.stationLong.place(x=150, y=120)
+        self.stationLong.place(x=250, y=120)
         
         Label(win,text="Station Altitude",
-            fg="black",
+            fg="black",font=('Fira Code', 10)
         ).place(x=0, y=185)
         self.stationAlt=Entry(win,
             fg="black",
             bg="white",
             bd=6)
-        self.stationAlt.place(x=150, y=180)
+        self.stationAlt.place(x=250, y=180)
 
 
         Label(win,text="Aircraft Information",
             fg="white",
-            bg="black").place(x=0, y=240)
+            bg='green',
+            height=2,
+            font=('Fira Code', 10)).place(x=0, y=240)
 
         Label(win,text="Aircraft Latitude",
             fg="black",
+            font=('Fira Code', 10)
         ).place(x=0, y=305)
         self.aircraftLat=Entry(win,
             fg="black",
             bd=6)
-        self.aircraftLat.place(x=150, y=300)
+        self.aircraftLat.place(x=250, y=300)
 
         Label(win,text="Aircraft Longtitude",
-            fg="black",
+            fg="black",font=('Fira Code', 10)
         ).place(x=0, y=365)
         self.aircraftLong=Entry(win,
             fg="black",
             bd=6)
-        self.aircraftLong.place(x=150, y=360)
+        self.aircraftLong.place(x=250, y=360)
         
         Label(win,text="Aircraft Altitude",
-            fg="black",
+            fg="black",font=('Fira Code', 10)
         ).place(x=0, y=425)
         self.aircraftAlt=Entry(win,
             fg="black",
             bd=6)
-        self.aircraftAlt.place(x=150, y=420)
+        self.aircraftAlt.place(x=250, y=420)
         
-        self.btn = Button(win,
-        text='submit', command=self.setServo)
+        self.btn = Button(win, text='submit', 
+        command=self.setServo, font=('Fira Code', 10), bg='green', fg='white')
         self.btn.place(x=250, y=500)
         self.gpio()
 
