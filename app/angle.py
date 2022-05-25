@@ -80,11 +80,11 @@ class setServoduty: #** format (pan, tilt)
     def angle_to_duty(self):
         if 0<=self.pan<=90:
             self.pan_servo = (self.pan/18)
-            self.pan = 7 - self.pan
+            self.pan_servo = 7 - self.pan_servo
         elif 270<=self.pan<360:
             tempPan = 360 - self.pan
             self.pan_servo = (tempPan/18)
             self.pan_servo +=7
         else:
-            self.pan = 7
+            self.pan_servo = 7
         self.tilt_servo = (self.tilt/18)+2
