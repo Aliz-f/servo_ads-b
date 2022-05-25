@@ -1,4 +1,5 @@
 from math import cos, sin, radians, sqrt, asin, acos, atan2, atan, degrees, pi
+R = 6371e3
 
 class setAngle: 
     
@@ -6,17 +7,19 @@ class setAngle:
     #** latitude & longitude convert to radians
     #** altitude in kilometres    
     
-    def __init__(self, aircraft, station):
+    def __init__(self, aircraft, station, id):
         self.aircraft = tuple((radians(aircraft[0]), radians(aircraft[1]), aircraft[2]))
         self.station  = tuple((radians(station[0]), radians(station[1]), station[2]))
-        self.deltaLat = self.aircraft[0] - self.station[0]
-        self.deltaLong = self.aircraft[1] - self.station[1]
+        self.aircraft_id = id
+        self.calculateDelta()
         self.calculatedisDistance()
         self.calculatePan()
         self.calculateTilt()
         self.standardPan()
 
-
+    def calculateDelta(self):
+        self.deltaLat = self.aircraft[0] - self.station[0]
+        self.deltaLong = self.aircraft[1] - self.station[1]
 
     def printInfo(self):
         print("Aircraft (Lat: {}, long: {}, altitude: {}) : ".format( self.aircraft[0],self.aircraft[1], self.aircraft[2]))
@@ -45,6 +48,13 @@ class setAngle:
         self.deltaAltitude = self.aircraft[2] - self.station[2]
         self.tilt = degrees(atan(self.deltaAltitude/self.distance))
 
+    def update(self, aircraft):
+        self.aircraft = tuple((radians(aircraft[0]), radians(aircraft[1]), aircraft[2]))
+        self.calculateDelta()
+        self.calculatedisDistance()
+        self.calculatePan()
+        self.calculateTilt()
+        self.standardPan()
 
     #* Function for check pan angle
     def standardPan(slef):
@@ -66,6 +76,10 @@ class setServoduty: #** format (pan, tilt)
         print("PanServo Duty:  {}".format(self.pan_servo))
         print("TiltServo Duty: {}".format(self.tilt_servo))
 
+    def update(self,pan, tilt):
+        self.pan = pan
+        self.tilt = tilt
+        self.angle_to_duty()
     
     def angle_to_duty(self):
         self.pan_servo = (self.pan/18)+2

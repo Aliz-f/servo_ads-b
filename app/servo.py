@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
-pinOut1 = 32
-pinOut2 = 33
+pinOut1 = 33 #tilt
+pinOut2 = 32 #pan
 freq = 50
 
 
