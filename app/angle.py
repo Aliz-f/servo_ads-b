@@ -87,4 +87,11 @@ class setServoduty: #** format (pan, tilt)
             self.pan_servo +=7
         else:
             self.pan_servo = 7
-        self.tilt_servo = (self.tilt/18)+2
+        
+        if self.tilt>180:
+            self.tilt_servo = 7
+        else:
+            dif = (self.tilt/18)+2
+            dif = 7 - dif
+            self.tilt_servo=7+dif
+
