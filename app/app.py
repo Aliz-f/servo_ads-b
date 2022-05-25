@@ -43,7 +43,7 @@ with py1090.Connection() as connection:
             perviousAircraft = message 
             if message.latitude and message.longitude:
                 print(f"switch to {message.aircraft_id}")
-                angle = setAngle(tuple((float(message.latitude), float(message.longitude), float(message.altitude))),station, message.aircraft_id)
+                angle = setAngle(tuple((float(message.latitude), float(message.longitude), float(message.altitude*0.3048))),station, message.aircraft_id)
                 duty = setServoduty(angle.pan, angle.tilt)
                 tilt.ChangeDutyCycle(duty.tilt_servo)
                 sleep(1)

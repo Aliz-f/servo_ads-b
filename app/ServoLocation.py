@@ -17,14 +17,16 @@ GPIO.setup(pinOut2, GPIO.OUT)
 tilt = GPIO.PWM(pinOut1, freq)
 pan = GPIO.PWM(pinOut2, freq)
 
-tilt.start(2)
+tilt.start(7)
 pan.start(7)
 
+print('Help:')
 print('location format for station : latitude,longtitude,altitude')
+print('location format for aircraft : latitude,longtitude,altitude')
+print('*************************')
 station = input('Enter station information: ')
 station = tuple((float(station.split(',')[0]), float(station.split(',')[1]), float(station.split(',')[2])))
 
-print('location format for aircraft : latitude,longtitude,altitude')
 while True:
 
     aircraft = input('Enter aircraft information: ')
@@ -32,10 +34,13 @@ while True:
 
     angle = setAngle(aircraft,station)
     duty = setServoduty(angle.pan, angle.tilt)
+    print('*************************')
+    print(angle.printInfo())
+    print('*************************')
+    
     tilt.ChangeDutyCycle(duty.tilt_servo)
     print(duty.tilt_servo)
     print(angle.tilt)
-
     sleep(1)
     pan.ChangeDutyCycle(duty.pan_servo)
     print(duty.pan_servo)
