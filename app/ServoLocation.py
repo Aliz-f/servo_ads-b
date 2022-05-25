@@ -36,8 +36,13 @@ while True:
     angle = setAngle(aircraft,station)
     duty = setServoduty(angle.pan, angle.tilt)
     tilt.ChangeDutyCycle(duty.tilt_servo)
+    print(duty.tilt_servo)
+    print(angle.tilt)
+
     sleep(1)
     pan.ChangeDutyCycle(duty.pan_servo)
+    print(duty.pan_servo)
+    print(angle.pan)
     sleep(1)
 
 
