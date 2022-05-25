@@ -18,10 +18,7 @@ tilt = GPIO.PWM(pinOut1, freq)
 pan = GPIO.PWM(pinOut2, freq)
 
 tilt.start(2)
-pan.start(2)
-
-
-dutyServo = 2
+pan.start(7)
 
 print('location format for station : latitude,longtitude,altitude')
 station = input('Enter station information: ')
