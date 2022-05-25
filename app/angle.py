@@ -7,7 +7,7 @@ class setAngle:
     #** latitude & longitude convert to radians
     #** altitude in kilometres    
     
-    def __init__(self, aircraft, station, id):
+    def __init__(self, aircraft, station, id=None):
         self.aircraft = tuple((radians(aircraft[0]), radians(aircraft[1]), aircraft[2]))
         self.station  = tuple((radians(station[0]), radians(station[1]), station[2]))
         self.aircraft_id = id

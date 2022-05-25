@@ -28,9 +28,9 @@ pan.start(2)
 
 dutyServo = 2
 
-print('location format : 32.444,54.4545')
-station = input('Enter station location: ')
-station = tuple((station.split(',')[0], station.split(',')[1]))
+print('station information : 32.444,54.4545,1888')
+station = input('Enter station information: ')
+station = tuple((station.split(',')[0], station.split(',')[1], station.split(',')[2]))
 
 # perviousAircraft = ''
 
