@@ -30,7 +30,7 @@ dutyServo = 2
 
 print('station information : 32.444,54.4545,1888')
 station = input('Enter station information: ')
-station = tuple((int(station.split(',')[0]), int(station.split(',')[1]), int(station.split(',')[2])))
+station = tuple((float(station.split(',')[0]), float(station.split(',')[1]), float(station.split(',')[2])))
 
 # perviousAircraft = ''
 
@@ -43,7 +43,7 @@ with py1090.Connection() as connection:
             perviousAircraft = message 
             if message.latitude and message.longitude:
                 print(f"switch to {message.aircraft_id}")
-                angle = setAngle(tuple((int(message.latitude), int(message.longitude), int(message.altitude))),station, message.aircraft_id)
+                angle = setAngle(tuple((float(message.latitude), float(message.longitude), float(message.altitude))),station, message.aircraft_id)
                 duty = setServoduty(angle.pan, angle.tilt)
                 tilt.ChangeDutyCycle(duty.tilt_servo)
                 sleep(1)

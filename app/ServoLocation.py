@@ -25,13 +25,13 @@ dutyServo = 2
 
 print('location format for station : latitude,longtitude,altitude')
 station = input('Enter station information: ')
-station = tuple((int(station.split(',')[0]), int(station.split(',')[1]), int(station.split(',')[2])))
+station = tuple((float(station.split(',')[0]), float(station.split(',')[1]), float(station.split(',')[2])))
 
 print('location format for aircraft : latitude,longtitude,altitude')
 while True:
 
     aircraft = input('Enter aircraft information: ')
-    aircraft = tuple((int(aircraft.split(',')[0]), int(aircraft.split(',')[1]), int(aircraft.split(',')[2])))
+    aircraft = tuple((float(aircraft.split(',')[0]), float(aircraft.split(',')[1]), float(aircraft.split(',')[2])))
 
     angle = setAngle(aircraft,station)
     duty = setServoduty(angle.pan, angle.tilt)
