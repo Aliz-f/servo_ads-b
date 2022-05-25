@@ -40,9 +40,9 @@ dutyServo = 2
 #     dutyServo+=1
 
 tilt.ChangeDutyCycle(2)
-sleep(0.02)
+sleep(1)
 pan.ChangeDutyCycle(2)
-sleep(0.02)
+sleep(1)
 tilt.stop()
 pan.stop()
 
