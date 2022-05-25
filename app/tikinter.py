@@ -38,9 +38,7 @@ class MyWindow():
     def __init__(self, win):
         Label(win,text="Station Information",
             fg="white",
-            bg="black",
-            width=60,
-            height=2).place(x=0, y=0)
+            bg="black").place(x=0, y=0)
 
         Label(win,text="Station Latitude",
             fg="black",
@@ -72,9 +70,7 @@ class MyWindow():
 
         Label(win,text="Aircraft Information",
             fg="white",
-            bg="black",
-            width=60,
-            height=2).place(x=0, y=240)
+            bg="black").place(x=0, y=240)
 
         Label(win,text="Aircraft Latitude",
             fg="black",
